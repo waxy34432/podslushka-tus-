@@ -125,10 +125,6 @@ async def submit_callback(call: CallbackQuery):
     if await db.is_blocked(call.from_user.id):
         await call.answer("Отправка предложек для этого аккаунта недоступна.", show_alert=True)
         return
-    await call.message.edit_text(
-        "Отправь сюда то что ты хотел бы видеть в канале",
-        reply_markup=consent_keyboard()
-    )
     await call.answer()
 
 
